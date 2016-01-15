@@ -1,4 +1,4 @@
-#panorama survey + requestlog results
+#panorama&takeover survey + requestlog results
 
 library(data.table)
 panorama = fread("~/Downloads/Panorama_survey")
