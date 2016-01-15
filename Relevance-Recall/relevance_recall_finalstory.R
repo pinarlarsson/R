@@ -8,11 +8,6 @@ dt.expanded
 library(polycor)
 polychor(dt.expanded$Relevance,dt.expanded$Recall)
 
-x <- dt.expanded[order(dt.expanded$Relevance),] # sort by relevance
-x$Recall <- factor(x$Recall) # it must be a factor
-x$color[x$Recall==0] <- "red"
-x$color[x$Recall==1] <- "blue"
-dotchart(x$Relevance,labels=row.names(x),cex=.7,groups= x$Recall,color=x$color)
 
 library(vcdExtra)
 GKgamma(df)
@@ -31,4 +26,7 @@ GKgamma(df_temp)
 
 library(MESS)
 gkgamma(df_temp, conf.level = 0.95)
+
+#recall-relevance inscreen plus surveys for further studies
+
 
