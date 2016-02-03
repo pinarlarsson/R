@@ -86,3 +86,123 @@ test = subset(correct_neg, viewableimps > 0)
 test_45 = subset(test, optiontext == '4' | optiontext == '5')
 test_3 = subset(test, optiontext == '3')
 test_12 = subset(test, optiontext == '1' | optiontext == '2')
+
+#recall vs p.intent
+df_temp2 <- data.frame("1"=c(7940,3026,3985,3067), "2"=c(3050,1879,3580,4101))
+colnames(df_temp2)[1] = 0
+colnames(df_temp2)[2] = 1
+rownames(df_temp2)[1] = 0
+rownames(df_temp2)[2] = 1
+rownames(df_temp2)[3] = 2
+rownames(df_temp2)[4] = 3
+
+
+library(vcdExtra)
+GKgamma(df_temp2)
+
+library(MESS)
+gkgamma(df_temp2, conf.level = 0.95)
+
+#recall vs BA (a bit creepy)
+
+df_temp3 <- data.frame("1"=c(7099,14334), "2"=c(2830,11802))
+colnames(df_temp3)[1] = 0
+colnames(df_temp3)[2] = 1
+rownames(df_temp3)[1] = 0
+rownames(df_temp3)[2] = 1
+
+
+library(vcdExtra)
+GKgamma(df_temp3)
+
+library(MESS)
+gkgamma(df_temp3, conf.level = 0.95)
+
+
+#recall vs B_ATT
+
+df_temp4 <- data.frame("1"=c(2256,2883,1750), "2"=c(811,1614,2016))
+colnames(df_temp4)[1] = 0
+colnames(df_temp4)[2] = 1
+rownames(df_temp4)[1] = 0
+rownames(df_temp4)[2] = 1
+rownames(df_temp4)[3] = 2
+
+library(vcdExtra)
+GKgamma(df_temp4)
+
+library(MESS)
+gkgamma(df_temp4, conf.level = 0.95)
+
+#recall vs Brand Image
+
+df_temp5 <- data.frame("1"=c(2892,2677,1946), "2"=c(1082,1538,1833))
+colnames(df_temp5)[1] = 0
+colnames(df_temp5)[2] = 1
+rownames(df_temp5)[1] = 0
+rownames(df_temp5)[2] = 1
+rownames(df_temp5)[3] = 2
+
+library(vcdExtra)
+GKgamma(df_temp5)
+
+library(MESS)
+gkgamma(df_temp5, conf.level = 0.95)
+
+
+
+#recall vs p.intent (another approach)
+
+df_temp6 <- data.frame("1"=c(1743,891,550,202), "2"=c(551,548,637,288))
+colnames(df_temp6)[1] = 0
+colnames(df_temp6)[2] = 1
+rownames(df_temp6)[1] = 0
+rownames(df_temp6)[2] = 1
+rownames(df_temp6)[3] = 2
+rownames(df_temp6)[4] = 3
+
+library(vcdExtra)
+GKgamma(df_temp6)
+
+library(MESS)
+gkgamma(df_temp6, conf.level = 0.95)
+
+df_temp7 <- data.frame("1"=c(6197,2135,3435,1508,1357), "2"=c(2499,1331,2943,1868,1945))
+colnames(df_temp7)[1] = 0
+colnames(df_temp7)[2] = 1
+rownames(df_temp7)[1] = 0
+rownames(df_temp7)[2] = 1
+rownames(df_temp7)[3] = 2
+rownames(df_temp7)[4] = 3
+rownames(df_temp7)[5] = 4
+
+library(vcdExtra)
+GKgamma(df_temp7)
+
+library(MESS)
+gkgamma(df_temp7, conf.level = 0.95)
+
+
+df_temp8 <- data.frame("1"=c(1079,
+                             379,
+                             367,
+                             798,
+                             1157,
+                             761,
+                             305,
+                             240,
+                             220), "2"=c(218,
+                                         123,
+                                         142,
+                                         369,
+                                         591,
+                                         566,
+                                         370,
+                                         326,
+                                         405))
+
+library(vcdExtra)
+GKgamma(df_temp8)
+
+library(MESS)
+gkgamma(df_temp8, conf.level = 0.95)
